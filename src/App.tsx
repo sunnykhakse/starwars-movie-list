@@ -2,14 +2,14 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import StarRating from './components/StarRating/StarRating';
+import SearchBox from './components/SearchBox/SearchBox';
 
 function App() {
   return (
     <div className="App">
       <header className='movie_list_header'>
         <select></select>
-        
-        <input placeholder='Type to filter...' className='movie_list_filter_input' />
+        <SearchBox id="search" name="search" value={""} placeholder='Type to filter...' className='movie_list_filter_input' onChange={() => {}} />
       </header>
       <section className='main'>
         <section className='movie_list_container'>
