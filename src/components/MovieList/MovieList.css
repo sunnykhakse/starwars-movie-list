@@ -4,12 +4,13 @@
   }
   .movie_list tbody tr{
     border-bottom: 1px solid #ccc;
+    cursor: pointer;
   }
-  .movie_list tbody tr:hover{
+  .movie_list tbody tr:hover, .movie_list tbody tr.active{
     background-color: #edf3fc;
   }
   .movie_list tbody tr td{
     padding: 15px;
     font-size: 14px;
-    color: #666;
+    color: #333;
   }

@@ -12,8 +12,8 @@ const MovieList:FC<MovieListProps> = ({movies}) => {
         <table className='movie_list' border={0} cellSpacing={0}>
         <tbody>
             {movies.map((movie:number,index:number) => (
-                <tr key={index}>
-                    <td>Episode {movie}</td>
+                <tr key={index} className={index === 2 ? 'active' : ''}>
+                    <td>EPISODE {movie}</td>
                     <td>The Empire Strikes Back</td>
                     <td>
                     <StarRating rating={movie} />
