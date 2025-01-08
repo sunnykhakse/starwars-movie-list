@@ -1,0 +1,14 @@
+.movie_list{
+    width:100%;
+    border-collapse: collapse;
+  }
+  .movie_list tbody tr{
+    border-bottom: 1px solid #ccc;
+  }
+  .movie_list tbody tr:hover{
+    background-color: #edf3fc;
+  }
+  .movie_list tbody tr td{
+    padding: 20px;
+    font-size: 14px;
+  }

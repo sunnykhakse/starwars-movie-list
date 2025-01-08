@@ -3,40 +3,20 @@ import logo from './logo.svg';
 import './App.css';
 import StarRating from './components/StarRating/StarRating';
 import SearchBox from './components/SearchBox/SearchBox';
+import MovieList from './components/MovieList/MovieList';
 
 function App() {
   return (
     <div className="App">
       <header className='movie_list_header'>
-        <select></select>
+        <select className='movie_list_sort'>
+          <option>Sort by...</option>
+        </select>
         <SearchBox id="search" name="search" value={""} placeholder='Type to filter...' className='movie_list_filter_input' onChange={() => {}} />
       </header>
       <section className='main'>
         <section className='movie_list_container'>
-          <table className='movie_list' border={0} cellSpacing={0}>
-            <tbody>
-              <tr>
-                <td>Episode 1</td>
-                <td>Episode 1</td>
-                <td>
-                  <StarRating rating={5.5} />
-                </td>
-                <td>Episode 1</td>
-              </tr>
-              <tr>
-                <td>Episode 1</td>
-                <td>Episode 1</td>
-                <td>Episode 1</td>
-                <td>Episode 1</td>
-              </tr>
-              <tr>
-                <td>Episode 1</td>
-                <td>Episode 1</td>
-                <td>Episode 1</td>
-                <td>Episode 1</td>
-              </tr>
-            </tbody>
-          </table>
+         <MovieList movies={[1,2,3,4,5,6,7,8]} />
         </section>
         <section className='movie_details_container'>
           <h1 className='movie_name'>Movie Name</h1> 
