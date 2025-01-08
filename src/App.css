@@ -10,7 +10,7 @@
   gap: 15px;
   background-color: #f7f5f5;
   border-bottom: 1px solid #ccc;
-  padding: 15px 30px;
+  padding: 15px 25px;
 }
 
 .movie_list_sort{
@@ -39,15 +39,26 @@
 .movie_list_container{
   width: 50%;
   border-right: 1px solid #ccc;
-  height: 100vh;
+  height: calc(100vh - 70px);
 }
 
 .movie_details_container{
   width: 50%;
   padding: 20px 20px;
+  line-height: 1.5  em;
 }
 .movie_name{
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
   color: #333;
+  margin-bottom: 15px;
+}
+
+.movie_rating_tag{
+  color: #329ce2;
+  font-size: 14px;
+  border: 1px solid #329ce2;
+  border-radius: 30px;
+  padding: 5px 10px;
+  text-decoration: none;
 }

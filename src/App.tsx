@@ -4,6 +4,7 @@ import './App.css';
 import StarRating from './components/StarRating/StarRating';
 import SearchBox from './components/SearchBox/SearchBox';
 import MovieList from './components/MovieList/MovieList';
+import MovieDetails from './components/MovieDetails/MovieDetails';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
          <MovieList movies={[1,2,3,4,5,6,7,8]} />
         </section>
         <section className='movie_details_container'>
-          <h1 className='movie_name'>Movie Name</h1> 
+          <MovieDetails />
         </section>
       </section>
     </div>

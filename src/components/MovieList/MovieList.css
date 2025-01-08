@@ -9,6 +9,7 @@
     background-color: #edf3fc;
   }
   .movie_list tbody tr td{
-    padding: 20px;
+    padding: 15px;
     font-size: 14px;
+    color: #666;
   }

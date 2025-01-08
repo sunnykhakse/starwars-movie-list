@@ -7,17 +7,18 @@ interface MovieListProps{
 }
 
 const MovieList:FC<MovieListProps> = ({movies}) => {
+    const date = '1999-05-09';
     return(
         <table className='movie_list' border={0} cellSpacing={0}>
         <tbody>
             {movies.map((movie:number,index:number) => (
                 <tr key={index}>
                     <td>Episode {movie}</td>
-                    <td>Episode 1</td>
+                    <td>The Empire Strikes Back</td>
                     <td>
                     <StarRating rating={movie} />
                     </td>
-                    <td>Episode 1</td>
+                    <td>{date}</td>
                 </tr>
             ))}
         </tbody>
