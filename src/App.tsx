@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import StarRating from './components/StarRating/StarRating';
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
               <tr>
                 <td>Episode 1</td>
                 <td>Episode 1</td>
-                <td>☆☆☆☆☆☆☆☆☆☆</td>
+                <td>
+                  <StarRating rating={5.5} />
+                </td>
                 <td>Episode 1</td>
               </tr>
               <tr>
