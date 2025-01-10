@@ -1,0 +1,8 @@
+.movie_rating_tag{
+    color: #329ce2;
+    font-size: 14px;
+    border: 1px solid #329ce2;
+    border-radius: 30px;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
