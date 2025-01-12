@@ -14,7 +14,7 @@ interface SearchBoxProps{
 const SearchBox:FC<SearchBoxProps> = ({id, value, ...props}) => {
 
     return(
-        <input {...props} />
+        <input autoComplete='off' {...props} />
     )
 }
 

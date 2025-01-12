@@ -1,0 +1,32 @@
+.movie_name{
+    font-size: 24px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 15px;
+}
+.movie_image_and_description{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.movie_description{
+    font-size: 15px;
+    line-height: 1.6em;
+}
+
+.movie_directed_by{
+    margin-bottom: 15px;
+}
+
+.movie_rating{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.movie_rating_tags{
+    display: flex;
+    gap: 15px;
+}
