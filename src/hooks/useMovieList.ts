@@ -23,6 +23,7 @@ export const useMovieList = () => {
                     throw new Error(`Failed to fetch details for movie: ${movie.title}`);
                   }
                   const omdbData = await omdbResponse.json();
+                  //Calculate average rating
                   const ratings = omdbData.Ratings.map((rating:Rating) => rating.Value.split('/')[0].replace('%',''))
                   const totalRating = ratings.reduce((acc:number,cur:any) => acc + (parseFloat(cur) > 10 ? parseFloat(cur) /10: parseFloat(cur)  ),0);
                   const avgRating = totalRating/3;
@@ -35,11 +36,9 @@ export const useMovieList = () => {
                   };
                 })
               );
-              console.log('moviesWithDetails',moviesWithDetails)
               setMovies(moviesWithDetails);
               setLoading(false);
             } catch (err) {
-            //   setError(err);
               setLoading(false);
             }
           };

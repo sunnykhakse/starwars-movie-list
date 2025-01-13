@@ -5,19 +5,25 @@ import MovieRatingTags from '../MovieRatingTags/MovieRatingTags';
 
 interface MovieDetailsProps{
     movie: Movie | null;
+    onClose: () => void;
 }
 
-const MovieDetails:FC<MovieDetailsProps> = ({movie}) => {
+const MovieDetails:FC<MovieDetailsProps> = ({movie, onClose}) => {
 
     if(!movie){
-        return(<p>Please select a movie</p>)
+        return(<article><p>Please select a movie</p></article>)
     }
  
     return(
+        <>
+        <div className='close_button_box'>
+            <span className='episode'>Episode {movie.episode_id}</span>
+            <button title='Close' onClick={onClose}>X</button>
+        </div>
         <article>
             <h1 className='movie_name'>{movie?.movie_title}</h1> 
             <div className='movie_image_and_description'>
-                <img src={movie?.poster} height={230} />
+                <img src={movie?.poster} />
                 <p className='movie_description' dangerouslySetInnerHTML={{ __html: (movie?.opening_crawl || '') }}>
         
                 </p>
@@ -30,6 +36,7 @@ const MovieDetails:FC<MovieDetailsProps> = ({movie}) => {
             </div>
             <MovieRatingTags ratings={movie.ratings} />
         </article>
+        </>
     )
 }
 

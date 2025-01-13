@@ -10,6 +10,7 @@
     -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
+    width: 100px;
   }
   
   .movie_list_sort:focus, .movie_list_sort.active{

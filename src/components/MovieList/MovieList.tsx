@@ -9,7 +9,6 @@ interface MovieListProps{
 }
 
 const MovieList:FC<MovieListProps> = ({movies, selectedMovie, onSelectMovie}) => {
-    const date = '1999-05-09';
     return(
         <table className='movie_list' border={0} cellSpacing={0}>
         <tbody>

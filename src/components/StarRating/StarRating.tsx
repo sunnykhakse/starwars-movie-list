@@ -9,7 +9,7 @@ interface StarRatingProps {
 const StarRating: FC<StarRatingProps> = ({ rating, maxRating = 10 }) => {
   const totalStars = 10;
   const starPercentage = (rating / maxRating) * totalStars;
-  const fullStars = Math.floor(starPercentage);
+  const fullStars = Math.round(starPercentage);
   const emptyStars = totalStars - fullStars;
 
   return (

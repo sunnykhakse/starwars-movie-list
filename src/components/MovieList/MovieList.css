@@ -14,3 +14,13 @@
     font-size: 14px;
     color: #333;
   }
+
+  @media only screen and (max-width: 768px) {
+    .movie_list tbody tr{
+      display: block;
+    }
+    .movie_list tbody tr td{
+      display: block;
+      padding: 10px;
+    }
+  }

@@ -9,12 +9,24 @@ import SortOptionsDropdown from './components/SortOptionsDropdown/SortOptionsDro
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 import {sortMvoies} from './utils/utils';
 import MovieFilter from './components/MovieFilter/MovieFilter';
+import useDeviceType from './hooks/useDeviceType';
 
 function App() {
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const [searchKeyword, setSearchKeyword] = useState<string>('');
   const [sortBy, setSortBy] = useState<string>('');
   const {loading, movies} = useMovieList();
+  const isMobile = useDeviceType();
+
+  //Custom style to show and hide movie list and details on mobile devices
+  const mobileStyle = {
+    list: isMobile ? {
+      display: !selectedMovie ? 'block' : 'none'
+    } : {},
+    details: isMobile ? {
+      display: selectedMovie ? 'block' : 'none'
+    } : {}
+  }
 
   const handleSelectMovie = (movie: Movie) => {
     setSelectedMovie(movie);
@@ -26,6 +38,10 @@ function App() {
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchKeyword(e.target.value);
+  }
+
+  const handleClose = () => {
+    setSelectedMovie(null);
   }
 
   const filterMovies = () => {
@@ -48,11 +64,11 @@ function App() {
         />
       </header>
       <section className='main'>
-        <section className='movie_list_container'>
+        <section className='movie_list_container' style={mobileStyle.list}>
          {loading ? <LoadingSpinner /> : <MovieList movies={updatedMovieList} selectedMovie={selectedMovie} onSelectMovie={handleSelectMovie} />}
         </section>
-        <section className='movie_details_container'>
-          <MovieDetails movie={selectedMovie} />
+        <section className='movie_details_container' style={mobileStyle.details}>
+          <MovieDetails movie={selectedMovie} onClose={handleClose} />
         </section>
       </section>
     </div>

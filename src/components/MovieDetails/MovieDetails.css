@@ -1,3 +1,7 @@
+.movie_details_container article{
+    padding: 20px 20px;
+}
+
 .movie_name{
     font-size: 24px;
     font-weight: 400;
@@ -10,9 +14,11 @@
     gap: 15px;
     margin-bottom: 15px;
 }
-
+.movie_image_and_description img{
+    max-height: 350px;
+}
 .movie_description{
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6em;
 }
 
@@ -29,4 +35,50 @@
 .movie_rating_tags{
     display: flex;
     gap: 15px;
+}
+
+.close_button_box{
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .movie_image_and_description{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    .movie_image_and_description img{
+        max-width: 280px;
+        margin: auto;
+    }
+    .movie_description, .movie_directed_by, .movie_rating{
+        font-size: 17px;
+    }    
+    .movie_rating_tags{
+        flex-direction: column;
+        text-align: center;
+    }
+    .close_button_box{
+        display: flex;
+        background: #efefef;
+        border-bottom: 1px solid #ccc;
+        padding: 15px 15px;
+        justify-content:space-between;
+        align-items: center;
+    }
+    .episode{
+        text-transform: uppercase;
+        font-size: 18px;
+        color: #666;
+    }
+    .close_button_box button{
+        color: #666;
+        border: 1px solid #ccc;
+        background-image: linear-gradient(#efefef, #ffffff);
+        text-transform: uppercase;
+        font-size: 14px;
+        border-radius: 5px;
+        padding: 10px 20px;
+    }
 }
