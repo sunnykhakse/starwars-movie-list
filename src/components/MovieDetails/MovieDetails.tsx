@@ -1,4 +1,5 @@
 import React, {FC} from 'react';
+import DOMPurify from 'dompurify'
 import StarRating from '../StarRating/StarRating';
 import './MovieDetails.css';
 import MovieRatingTags from '../MovieRatingTags/MovieRatingTags';
@@ -24,7 +25,7 @@ const MovieDetails:FC<MovieDetailsProps> = ({movie, onClose}) => {
             <h1 className='movie_name'>{movie?.movie_title}</h1> 
             <div className='movie_image_and_description'>
                 <img src={movie?.poster} />
-                <p className='movie_description' dangerouslySetInnerHTML={{ __html: (movie?.opening_crawl || '') }}>
+                <p className='movie_description' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(movie?.opening_crawl || '') }}>
         
                 </p>
             </div>
