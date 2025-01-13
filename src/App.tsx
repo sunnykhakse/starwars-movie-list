@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { ChangeEvent, useCallback, useMemo, useState } from 'react';
 import './App.css';
 import StarRating from './components/StarRating/StarRating';
 import SearchBox from './components/SearchBox/SearchBox';
@@ -8,6 +8,7 @@ import { useMovieList } from './hooks/useMovieList';
 import SortOptionsDropdown from './components/SortOptionsDropdown/SortOptionsDropdown';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 import {sortMvoies} from './utils/utils';
+import MovieFilter from './components/MovieFilter/MovieFilter';
 
 function App() {
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
@@ -23,6 +24,10 @@ function App() {
     setSortBy(value);
   }
 
+  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchKeyword(e.target.value);
+  }
+
   const filterMovies = () => {
     setSelectedMovie(null);
     const filteredMovies =  searchKeyword === '' ? movies : movies.filter((movie:Movie) => movie.movie_title.toLowerCase().includes(searchKeyword.toLowerCase()));
@@ -35,14 +40,11 @@ function App() {
   return (
     <div className="App">
       <header className='movie_list_header'>
-        <SortOptionsDropdown id='sort_by' name='sort_by' value={sortBy} onChage={handleSortByChange} />
-        <SearchBox 
-          id="search" 
-          name="search" 
-          value={searchKeyword} 
-          placeholder='Type to filter...' 
-          className='movie_list_filter_input' 
-          onChange={(e) => setSearchKeyword(e.target.value)} 
+        <MovieFilter
+          sortOption={sortBy}
+          searchKeyword={searchKeyword}
+          onSortChange={handleSortByChange}
+          onSearchChange={handleSearchChange}
         />
       </header>
       <section className='main'>

@@ -9,9 +9,12 @@ interface SortOptionsDropdownProps {
 }
 
 const options = [
-    {label: 'Episode', value: 'episode'},
-    {label: 'Release Date', value: 'release_date'},
-    {label: 'Rating', value: 'rating'},
+    {label: 'Episode asc', value: 'episode_asc'},
+    {label: 'Episode desc', value: 'episode_desc'},
+    {label: 'Release Date asc', value: 'release_date_asc'},
+    {label: 'Release Date desc', value: 'release_date_desc'},
+    {label: 'Rating asc', value: 'rating_asc'},
+    {label: 'Rating desc', value: 'rating_desc'},
 ]
 const SortOptionsDropdown: FC<SortOptionsDropdownProps> = ({id, name, value, className = '', onChage}) => {
   return (
