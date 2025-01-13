@@ -1,4 +1,4 @@
-import React, {FC, MouseEventHandler} from 'react';
+import {FC} from 'react';
 import './MovieList.css';
 import StarRating from '../StarRating/StarRating';
 

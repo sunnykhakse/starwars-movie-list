@@ -1,11 +1,8 @@
-import React, { ChangeEvent, useCallback, useMemo, useState } from 'react';
+import { ChangeEvent, useMemo, useState } from 'react';
 import './App.css';
-import StarRating from './components/StarRating/StarRating';
-import SearchBox from './components/SearchBox/SearchBox';
 import MovieList from './components/MovieList/MovieList';
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import { useMovieList } from './hooks/useMovieList';
-import SortOptionsDropdown from './components/SortOptionsDropdown/SortOptionsDropdown';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 import {sortMvoies} from './utils/utils';
 import MovieFilter from './components/MovieFilter/MovieFilter';

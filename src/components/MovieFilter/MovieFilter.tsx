@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC} from 'react';
+import {ChangeEvent, FC} from 'react';
 import SortOptionsDropdown from '../SortOptionsDropdown/SortOptionsDropdown';
 import SearchBox from '../SearchBox/SearchBox';
 

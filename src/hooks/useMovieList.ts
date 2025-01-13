@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 
 const swapi_api_url = process.env.REACT_APP_SWAPI_API;
 const omdb_api_url = process.env.REACT_APP_OMDB_API;

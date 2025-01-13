@@ -1,4 +1,4 @@
-import React,{ChangeEvent, FC} from 'react';
+import {FC} from 'react';
 import './SortOptionsDropdown.css';
 
 interface SortOptionsDropdownProps {
@@ -23,11 +23,12 @@ const SortOptionsDropdown: FC<SortOptionsDropdownProps> = ({id, name, value, cla
         id={id}
         name={name}
         className={`movie_list_sort ${value !== "" ? 'active' : ''} ${className}`} 
+        defaultValue={value}
         onChange={(e) => onChage(e.target.value)}
         >
           <option value="">Sort by...</option>
           {options.map((option:any) => (
-            <option key={option.value} value={option.value} selected={option.value === value}>{option.label}</option>
+            <option key={option.value} value={option.value}>{option.label}</option>
           ))}
         </select>
   );
