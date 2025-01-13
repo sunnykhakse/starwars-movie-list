@@ -40,15 +40,13 @@ function App() {
   const handleClose = () => {
     setSelectedMovie(null);
   }
-
-  const filterMovies = () => {
+  
+  const updatedMovieList = useMemo(() => {
     setSelectedMovie(null);
     const filteredMovies =  searchKeyword === '' ? movies : movies.filter((movie:Movie) => movie.movie_title.toLowerCase().includes(searchKeyword.toLowerCase()));
     const sortedMovies = sortMvoies(filteredMovies, sortBy)
     return sortedMovies;
-  }
-  
-  const updatedMovieList = useMemo(() => filterMovies(),[searchKeyword, movies, sortBy]);
+  },[searchKeyword, movies, sortBy]);
 
   return (
     <div className="App">
