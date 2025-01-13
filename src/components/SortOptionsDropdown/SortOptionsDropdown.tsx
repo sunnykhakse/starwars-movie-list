@@ -1,4 +1,5 @@
 import React,{ChangeEvent, FC} from 'react';
+import './SortOptionsDropdown.css';
 
 interface SortOptionsDropdownProps {
     id: string;

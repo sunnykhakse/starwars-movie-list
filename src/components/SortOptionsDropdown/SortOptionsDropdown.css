@@ -1,0 +1,20 @@
+.movie_list_sort{
+    color: #666;
+    border: 1px solid #ccc;
+    background-image: linear-gradient(#efefef, #ffffff);
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  }
+  
+  .movie_list_sort:focus, .movie_list_sort.active{
+    color: #329ce2;
+    border: 1px solid #329ce2;
+    outline: none;
+  }
+  
