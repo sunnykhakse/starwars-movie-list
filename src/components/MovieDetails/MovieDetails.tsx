@@ -24,7 +24,7 @@ const MovieDetails:FC<MovieDetailsProps> = ({movie, onClose}) => {
         <article>
             <h1 className='movie_name'>{movie?.movie_title}</h1> 
             <div className='movie_image_and_description'>
-                <img src={movie?.poster} />
+                <img src={movie?.poster} alt={`Poster of ${movie?.movie_title}`}/>
                 <p className='movie_description' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(movie?.opening_crawl || '') }}>
         
                 </p>
